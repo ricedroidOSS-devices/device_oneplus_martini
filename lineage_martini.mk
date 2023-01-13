@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2022 The LineageOS Project
+# Copyright (C) 2021-2022 The OS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -11,12 +11,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from martini device
 $(call inherit-product, device/oneplus/martini/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common  stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Rice stuff
+RICE_CHIPSET := SD888
+RICE_MAINTAINER := InFeRnO
+WITH_GMS := true
+SUSHI_BOOTANIMATION := 1080
+TARGET_ENABLE_BLUR := true
+TARGET_HAS_UDFPS := true
+TARGET_USE_PIXEL_FINGERPRINT := true
+TARGET_USE_GOOGLE_TELEPHONY := false
+#-------------------------------------#
 
 TARGET_BOOT_ANIMATION_RES := 1080
-PRODUCT_NAME := aosp_martini
+PRODUCT_NAME := lineage_martini
 PRODUCT_DEVICE := martini
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
